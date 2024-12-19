@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 // Function to call the REST API
 async function callApi() {
     try {
-        const response = await fetch('https://n8n-render2.onrender.com/webhook/.net');
+        const response = await fetch('https://n8n-render2.onrender.com/webhook-test/.net');
         if (response.ok) {
             const data = await response.json();
             console.log(`[${new Date().toLocaleString()}] API call success:`, data);
@@ -17,4 +17,4 @@ async function callApi() {
 
 // Call the API immediately and then every 1 minute
 callApi(); // Initial call
-setInterval(callApi, 60000); // Repeat every 1 minute
+setInterval(callApi, 60000); // Repeat every 1 minute (60,000 milliseconds)
