@@ -3,7 +3,7 @@ import fetch from 'node-fetch';
 // Function to call the REST API
 async function callApi() {
     try {
-        const response = await fetch('https://n8n-render2.onrender.com/webhook-test/.net');
+        const response = await fetch('https://n8n-render2.onrender.com/webhook/wakup');
         if (response.ok) {
             const data = await response.json();
             console.log(`[${new Date().toLocaleString()}] API call success:`, data);
