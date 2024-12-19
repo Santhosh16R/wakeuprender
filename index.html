@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Call Every 10 Minutes</title>
+</head>
+<body>
+    <h1>API Call Status</h1>
+    <div id="status">Waiting to call API...</div>
+    <script>
+        // Function to call the REST API
+        async function callApi() {
+            const statusDiv = document.getElementById('status');
+            try {
+                const response = await fetch('https://n8n-render2.onrender.com/webhook-test/.net');
+                if (response.ok) {
+                    const data = await response.json();
+                    console.log('Response:', data);
+                    statusDiv.textContent = `Last API call success: ${new Date().toLocaleString()}`;
+                } else {
+                    throw new Error(`API call failed with status ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Error calling API:', error.message);
+                statusDiv.textContent = `Error: ${error.message} at ${new Date().toLocaleString()}`;
+            }
+        }
+
+        // Call the API immediately and then every 10 minutes
+        callApi(); // Initial call
+        setInterval(callApi, 600000); // Repeat every 10 minutes
+    </script>
+</body>
+</html>
