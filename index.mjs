@@ -17,4 +17,4 @@ async function callApi() {
 
 // Call the API immediately and then every 1 minute
 callApi(); // Initial call
-setInterval(callApi, 60000); // Repeat every 1 minute (60,000 milliseconds)
+setInterval(callApi, 600000); // Repeat every 1 minute (60,000 milliseconds)
