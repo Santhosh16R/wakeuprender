@@ -1,11 +1,5 @@
 {
-    "name": "api-caller",
-    "version": "1.0.0",
-    "description": "A script to call an API every minute",
-    "main": "index.js",
-    "scripts": {
-        "start": "node index.js"
-    },
+    "type": "module",
     "dependencies": {
         "node-fetch": "^3.3.2"
     }
