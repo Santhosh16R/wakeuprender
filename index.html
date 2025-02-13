@@ -6,6 +6,7 @@
     <title>API Call Every 10 Minutes</title>
 </head>
 <body>
+    
     <h1>API Call Status</h1>
     <div id="status">Waiting to call API...</div>
     <script>
@@ -31,5 +32,13 @@
         callApi(); // Initial call
        setInterval(callApi, 600000); // Repeat every 10 minutes
     </script>
+    <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "1b847914-1207-4949-b3ed-16a13490759b",
+        apiHost: "http://localhost:3000",
+    })
+</script>
+
 </body>
 </html>
